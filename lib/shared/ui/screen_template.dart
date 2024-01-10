@@ -6,6 +6,7 @@
 // ID: 20240110092502
 // 10.01.2024 09:25
 import 'package:flutter/material.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:sfmg_homepage/shared/ui/appbar/appbar_template.dart';
 
 /// The `ScreenTemplate` widget is a Flutter `StatelessWidget` that serves as
@@ -54,6 +55,7 @@ class ScreenTemplate extends StatelessWidget {
               children: [
                 Expanded(
                   child: SingleChildScrollView(
+                    controller: controller,
                     child: child,
                   ),
                 ),
@@ -65,3 +67,5 @@ class ScreenTemplate extends StatelessWidget {
     );
   }
 }
+
+final controller = AutoScrollController();

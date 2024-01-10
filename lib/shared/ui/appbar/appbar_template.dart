@@ -9,8 +9,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 import 'package:sfmg_homepage/shared/extensions/build_context_extension.dart';
+import 'package:sfmg_homepage/shared/ui/screen_template.dart';
 
 /// The [AppBarTemplate] widget is a Flutter [StatelessWidget] that represents
 /// the custom AppBar used throughout the application. It provides the
@@ -57,7 +59,10 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                       splashFactory: NoSplash.splashFactory,
                     ),
                     //onPressed: routeToAboutUs,
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.scrollToIndex(1,
+                          preferPosition: AutoScrollPosition.begin);
+                    },
                     child: TextRenderer(
                       child: Text(
                         context.appLocalizations?.appBarAboutUs ?? 'About us',
@@ -105,7 +110,10 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                       splashFactory: NoSplash.splashFactory,
                     ),
                     //onPressed: routeToAboutUs,
-                    onPressed: () {},
+                    onPressed: () {
+                      controller.scrollToIndex(2,
+                          preferPosition: AutoScrollPosition.begin);
+                    },
                     child: TextRenderer(
                       child: Text(
                         context.appLocalizations?.appbarSocialMedia ??
