@@ -1,16 +1,14 @@
 # sfmg_homepage
 
-Homepage of the Strasbourg Flutter Meetup Group
+This application is the homepage of the Strasbourg Flutter Meetup Group.
 
-## Getting Started
+## Introduction and goals
 
-This project is a starting point for a Flutter application.
+The Strasbourg Flutter Meetup Group is a voluntary group of Flutter enthusiasts based in the
+beautiful city of Strasbourg (France). In order to represent the group appropriately, it needs a
+homepage in addition to its Meetup account, where it can present its members and projects.
+That's why this project shall lead into a beautiful homepage for the Strasbourg Flutter Meetup
+Group.
 
-A few resources to get you started if this is your first Flutter project:
+## Project status
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
