@@ -23,7 +23,7 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="sfmg_homepage">
+  <meta name="apple-mobile-web-app-title" content="Strasbourg Flutter Meetup Group">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
@@ -54,6 +54,12 @@
         }
       });
     });
+  </script>
+  <script>
+    const regExp = new RegExp("bot|google|baidu|bing|msn|teoma|slurp|yandex", "i");
+    if (regExp.test(navigator.userAgent)) {
+      window.flutterWebRenderer = "html";
+    }
   </script>
 </body>
 </html>
