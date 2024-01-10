@@ -35,6 +35,7 @@ class AboutUs extends StatelessWidget {
     return Column(
       children: [
         _buildImageSection(),
+        const SizedBox(height: 32.0),
         _buildTextSection(context, false),
       ],
     );
