@@ -15,7 +15,7 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isLargeScreen = MediaQuery.of(context).size.width >= 1920.0;
+    final isLargeScreen = MediaQuery.of(context).size.width >= 1445.0;
 
     return isLargeScreen
         ? _buildLargeScreenLayout(context)
@@ -25,32 +25,54 @@ class AboutUs extends StatelessWidget {
   Widget _buildLargeScreenLayout(BuildContext context) {
     return Row(
       children: [
-        _buildImageSection(),
-        _buildTextSection(context, true),
+        _buildImageSection(true),
+        Expanded(flex: 1, child: _buildTextSection(context, true)),
       ],
     );
   }
 
   Widget _buildSmallScreenLayout(BuildContext context) {
-    return Column(
-      children: [
-        _buildImageSection(),
-        const SizedBox(height: 32.0),
-        _buildTextSection(context, false),
-      ],
+    return SizedBox(
+      width: 1920 - 64,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildImageSection(false),
+          const SizedBox(height: 32.0),
+          _buildTextSection(context, false),
+        ],
+      ),
     );
   }
 
-  Widget _buildImageSection() {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: (1920 - 64) / 2),
-      child: Padding(
-        padding: const EdgeInsets.only(right: 32.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10.0),
-          child: ImageRenderer(
-            alt: 'Strasbourg Flutter Meetup Group default image',
-            child: Image.asset("/images/sfmg_header.jpg"),
+  Widget _buildImageSection(bool isLargeScreen) {
+    if (isLargeScreen) {
+      return ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: (1920 - 64) / 2),
+        child: Padding(
+          padding: EdgeInsets.only(right: isLargeScreen ? 32.0 : 0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10.0),
+            child: ImageRenderer(
+              alt: 'Strasbourg Flutter Meetup Group default image',
+              child: Image.asset("/images/sfmg_header.jpg"),
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Padding(
+      padding: EdgeInsets.only(right: isLargeScreen ? 32.0 : 0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: ImageRenderer(
+          alt: 'Strasbourg Flutter Meetup Group default image',
+          child: Image.asset(
+            "/images/sfmg_header.jpg",
+            width: double.infinity,
+            height: 672.0,
+            fit: BoxFit.cover,
           ),
         ),
       ),
@@ -62,6 +84,7 @@ class AboutUs extends StatelessWidget {
       return ConstrainedBox(
         constraints: const BoxConstraints(
           maxWidth: (1920 - 64) / 2,
+          minWidth: 300.0,
           maxHeight: 672.0,
         ),
         child: Column(
@@ -75,9 +98,12 @@ class AboutUs extends StatelessWidget {
     }
 
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: (1920 - 64) / 2),
+      constraints: const BoxConstraints(
+        maxWidth: (1920 - 64) / 2,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildTitleText(context),
           const SizedBox(

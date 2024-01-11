@@ -7,5 +7,10 @@
   "appbarSocialMedia":"Social Media",
   "aboutUsTitle": "Where Strasbourg's Flutter Enthusiasts Unite.",
   "aboutUsParagraphTitle": "About us",
-  "aboutUsParagraph":"The Strasbourg Flutter Meetup Group is a vibrant community of Flutter enthusiasts based in and around Strasbourg. We are brought together by our shared passion for Flutter, Google's open-source UI development framework.\n\nOur group serves as a platform for developers to connect, collaborate, and learn more about Flutter.\n\nWe meet every two weeks at \"La Plage Digitale\". There we listen to presentations from our members, talk about the current status of our joint projects and solve problems together if necessary. We then end the evening with a beer together in Strasbourg's old town."
+  "aboutUsParagraph":"The Strasbourg Flutter Meetup Group is a vibrant community of Flutter enthusiasts based in and around Strasbourg. We are brought together by our shared passion for Flutter, Google's open-source UI development framework.\n\nOur group serves as a platform for developers to connect, collaborate, and learn more about Flutter.\n\nWe meet every two weeks at \"La Plage Digitale\". There we listen to presentations from our members, talk about the current status of our joint projects and solve problems together if necessary. We then end the evening with a beer together in Strasbourg's old town.",
+  "socialMediaTitle":"SocialMedia",
+  "socialMediaMeetupTitle":"meetup",
+  "socialMediaMeetupText":"Interested in joining our vibrant Flutter community? Click on 'Meetup' to sign up and be part of the Strasbourg Flutter Meetup Group.\n\nHere, you'll engage with fellow Flutter enthusiasts, collaborate on projects, and share knowledge. Don’t miss this opportunity to connect and grow with us!",
+  "socialMediaGithubTitle":"Github",
+  "socialMediaGithubText":"Explore our world of code on GitHub! Click 'Go to GitHub' to access a wealth of resources from the Strasbourg Flutter Meetup Group. Our GitHub repository is a treasure trove of projects, documentation, and more, showcasing the collective expertise and collaboration of our members.\n\nDive in to find, contribute to, or learn from our diverse range of Flutter projects!"
 }
