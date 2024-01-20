@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:sfmg_homepage/shared/ui/appbar/appbar_template.dart';
+import 'package:sfmg_homepage/shared/ui/drawer/sfmg_drawer.dart';
 
 /// The `ScreenTemplate` widget is a Flutter `StatelessWidget` that serves as
 /// a common template for creating screens or pages throughout the application.
@@ -44,22 +45,24 @@ class ScreenTemplate extends StatelessWidget {
       child: Scaffold(
         // The custom `AppBarTemplate` widget at the top of the screen.
         appBar: appBarTemplate,
-        //drawer: const MDCDrawer(),
-        body: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 1920,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Expanded(
-                  child: SingleChildScrollView(
-                    controller: controller,
-                    child: child,
+        drawer: const MDCDrawer(),
+        body: SelectionArea(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: 1920,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: SingleChildScrollView(
+                      controller: controller,
+                      child: child,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

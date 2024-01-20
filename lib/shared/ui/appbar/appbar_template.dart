@@ -10,7 +10,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
+import 'package:seo/seo.dart';
 import 'package:sfmg_homepage/shared/extensions/build_context_extension.dart';
 import 'package:sfmg_homepage/shared/ui/screen_template.dart';
 
@@ -63,44 +63,47 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                       controller.scrollToIndex(1,
                           preferPosition: AutoScrollPosition.begin);
                     },
-                    child: TextRenderer(
+                    child: Seo.text(
+                      style: TextTagStyle.h6,
+                      text:
+                          context.appLocalizations?.appBarAboutUs ?? 'About us',
                       child: Text(
                         context.appLocalizations?.appBarAboutUs ?? 'About us',
                       ),
                     ),
                   ),
-                if (screenSizeClass != ScreenSizeClass.smallScreen)
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.transparent,
-                      ),
-                      splashFactory: NoSplash.splashFactory,
-                    ),
-                    //onPressed: routeToAboutUs,
-                    onPressed: () {},
-                    child: TextRenderer(
-                      child: Text(
-                        context.appLocalizations?.appbarEvents ?? 'Events',
-                      ),
-                    ),
-                  ),
-                if (screenSizeClass != ScreenSizeClass.smallScreen)
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateColor.resolveWith(
-                        (states) => Colors.transparent,
-                      ),
-                      splashFactory: NoSplash.splashFactory,
-                    ),
-                    //onPressed: routeToAboutUs,
-                    onPressed: () {},
-                    child: TextRenderer(
-                      child: Text(
-                        context.appLocalizations?.appbarProjects ?? 'Projects',
-                      ),
-                    ),
-                  ),
+                // if (screenSizeClass != ScreenSizeClass.smallScreen)
+                //   TextButton(
+                //     style: ButtonStyle(
+                //       overlayColor: MaterialStateColor.resolveWith(
+                //         (states) => Colors.transparent,
+                //       ),
+                //       splashFactory: NoSplash.splashFactory,
+                //     ),
+                //     //onPressed: routeToAboutUs,
+                //     onPressed: () {},
+                //     child: TextRenderer(
+                //       child: Text(
+                //         context.appLocalizations?.appbarEvents ?? 'Events',
+                //       ),
+                //     ),
+                //   ),
+                // if (screenSizeClass != ScreenSizeClass.smallScreen)
+                //   TextButton(
+                //     style: ButtonStyle(
+                //       overlayColor: MaterialStateColor.resolveWith(
+                //         (states) => Colors.transparent,
+                //       ),
+                //       splashFactory: NoSplash.splashFactory,
+                //     ),
+                //     //onPressed: routeToAboutUs,
+                //     onPressed: () {},
+                //     child: TextRenderer(
+                //       child: Text(
+                //         context.appLocalizations?.appbarProjects ?? 'Projects',
+                //       ),
+                //     ),
+                //   ),
                 if (screenSizeClass != ScreenSizeClass.smallScreen)
                   TextButton(
                     style: ButtonStyle(
@@ -114,7 +117,10 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                       controller.scrollToIndex(2,
                           preferPosition: AutoScrollPosition.begin);
                     },
-                    child: TextRenderer(
+                    child: Seo.text(
+                      style: TextTagStyle.h6,
+                      text: context.appLocalizations?.appbarSocialMedia ??
+                          'Social Media',
                       child: Text(
                         context.appLocalizations?.appbarSocialMedia ??
                             'Social Media',
@@ -136,7 +142,7 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                   ? const BackButton()
                   : Padding(
                       padding: const EdgeInsets.only(left: 12.0),
-                      child: SvgPicture.asset('logos/stork.svg',
+                      child: SvgPicture.asset('assets/logos/stork.svg',
                           colorFilter: const ColorFilter.mode(
                               Color(0xFF095d9e), BlendMode.srcIn),
                           semanticsLabel: 'A stork logo.'),
@@ -145,7 +151,10 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
               // The title of the AppBar, retrieved from the app's localizations or
               // providing a default title if not found.
               title: screenSizeClass == ScreenSizeClass.smallScreen
-                  ? TextRenderer(
+                  ? Seo.text(
+                      style: TextTagStyle.h2,
+                      text:
+                          context.appLocalizations?.appBarTitleShort ?? 'SFMG',
                       child: AutoSizeText(
                         context.appLocalizations?.appBarTitleShort ?? 'SFMG',
                         minFontSize: 10.0,
@@ -154,7 +163,10 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                         overflow: TextOverflow.visible,
                       ),
                     )
-                  : TextRenderer(
+                  : Seo.text(
+                      style: TextTagStyle.h2,
+                      text: context.appLocalizations?.appBarTitleLong ??
+                          'Strasbourg Flutter MeetupGroup',
                       child: AutoSizeText(
                         context.appLocalizations?.appBarTitleLong ??
                             'Strasbourg Flutter MeetupGroup',

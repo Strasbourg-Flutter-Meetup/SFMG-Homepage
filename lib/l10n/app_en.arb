@@ -12,5 +12,6 @@
   "socialMediaMeetupTitle":"meetup",
   "socialMediaMeetupText":"Interested in joining our vibrant Flutter community? Click on 'Meetup' to sign up and be part of the Strasbourg Flutter Meetup Group.\n\nHere, you'll engage with fellow Flutter enthusiasts, collaborate on projects, and share knowledge. Don’t miss this opportunity to connect and grow with us!",
   "socialMediaGithubTitle":"Github",
-  "socialMediaGithubText":"Explore our world of code on GitHub! Click 'Go to GitHub' to access a wealth of resources from the Strasbourg Flutter Meetup Group. Our GitHub repository is a treasure trove of projects, documentation, and more, showcasing the collective expertise and collaboration of our members.\n\nDive in to find, contribute to, or learn from our diverse range of Flutter projects!"
+  "socialMediaGithubText":"Explore our world of code on GitHub! Click 'Go to GitHub' to access a wealth of resources from the Strasbourg Flutter Meetup Group. Our GitHub repository is a treasure trove of projects, documentation, and more, showcasing the collective expertise and collaboration of our members.\n\nDive in to find, contribute to, or learn from our diverse range of Flutter projects!",
+  "aboutUsSFMG":"Strasbourg Flutter\nMeetup Group"
 }

@@ -41,15 +41,18 @@ dependencies:
   intl: ^0.18.1
   flutter_localizations:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   auto_size_text: ^3.0.0
-  seo_renderer: ^0.6.0
   flex_color_scheme: ^7.3.1
   adaptive_theme: ^3.5.0
   flutter_svg: ^2.0.9
   flex_list: ^1.0.0
   extended_wrap: ^0.1.5
   url_launcher: ^6.2.3
+  seo: ^0.0.6
   scroll_to_index: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -103,3 +106,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_launcher_icons:
+  #  android: "launcher_icon"
+  #  ios: false
+  #  image_path: "assets/icon/web_icon.png"
+  #  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/images/app_icon.png"
+    background_color: "#BAC000"
+    theme_color: "#BAC000"
