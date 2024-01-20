@@ -4,13 +4,16 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:seo_renderer/helpers/robot_detector_vm.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:seo/seo.dart';
 import 'package:sfmg_homepage/shared/ui/homepage.dart';
 
 import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  usePathUrlStrategy();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -57,8 +60,8 @@ class MyApp extends StatelessWidget {
       swapLegacyOnMaterial3: true,
     );
 
-    return RobotDetector(
-      debug: true,
+    return SeoController(
+      tree: WidgetTree(context: context),
       child: AdaptiveTheme(
         light: lightTheme,
         dark: darkTheme,
