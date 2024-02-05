@@ -28,14 +28,17 @@ class UpcomingEvents extends StatelessWidget {
         Positioned(
           bottom: 0.0,
           left: 0.0,
-          child: SvgPicture.asset(
-            'assets/waves/upcoming_events_wave.svg',
-            width: screenSizeClass == ScreenSizeClass.largeScreen
-                ? 1920.0
-                : null, // Set the width to the screen width
-            fit: screenSizeClass == ScreenSizeClass.largeScreen
-                ? BoxFit.fitWidth
-                : BoxFit.none, // Add this line to fit the image to the width
+          child: Container(
+            constraints: const BoxConstraints(maxHeight: 200.0),
+            child: SvgPicture.asset(
+              'assets/waves/upcoming_events_wave.svg',
+              width: screenSizeClass == ScreenSizeClass.largeScreen
+                  ? 1920.0
+                  : null,
+              fit: screenSizeClass == ScreenSizeClass.largeScreen
+                  ? BoxFit.fitWidth
+                  : BoxFit.none, // Add this line to fit the image to the width
+            ),
           ),
         ),
 
