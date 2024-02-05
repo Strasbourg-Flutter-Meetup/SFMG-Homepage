@@ -45,6 +45,18 @@ class MDCDrawerContent extends StatelessWidget {
         ),
         ListTile(
           title: Text(
+            context.appLocalizations?.appbarEvents ?? 'Events',
+          ),
+          onTap: () {
+            controller.scrollToIndex(2);
+            Navigator.of(context).pop();
+          },
+        ),
+        const SizedBox(
+          height: 12.0,
+        ),
+        ListTile(
+          title: Text(
             context.appLocalizations?.appbarSocialMedia ?? 'Social Media',
           ),
           onTap: () {
@@ -55,6 +67,7 @@ class MDCDrawerContent extends StatelessWidget {
         const SizedBox(
           height: 12.0,
         ),
+
       ],
     );
   }
