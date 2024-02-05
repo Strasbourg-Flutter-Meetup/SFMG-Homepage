@@ -72,22 +72,29 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                   ),
-                // if (screenSizeClass != ScreenSizeClass.smallScreen)
-                //   TextButton(
-                //     style: ButtonStyle(
-                //       overlayColor: MaterialStateColor.resolveWith(
-                //         (states) => Colors.transparent,
-                //       ),
-                //       splashFactory: NoSplash.splashFactory,
-                //     ),
-                //     //onPressed: routeToAboutUs,
-                //     onPressed: () {},
-                //     child: TextRenderer(
-                //       child: Text(
-                //         context.appLocalizations?.appbarEvents ?? 'Events',
-                //       ),
-                //     ),
-                //   ),
+                if (screenSizeClass != ScreenSizeClass.smallScreen)
+                  TextButton(
+                    style: ButtonStyle(
+                      overlayColor: MaterialStateColor.resolveWith(
+                        (states) => Colors.transparent,
+                      ),
+                      splashFactory: NoSplash.splashFactory,
+                    ),
+                    //onPressed: routeToAboutUs,
+                    onPressed: () {
+                      controller.scrollToIndex(2,
+                          preferPosition: AutoScrollPosition.begin);
+                    },
+                    child: Seo.text(
+                      style: TextTagStyle.h6,
+                      text: context.appLocalizations?.appbarEvents ??
+                          'Events',
+                      child: Text(
+                        context.appLocalizations?.appbarEvents ??
+                            'Events',
+                      ),
+                    ),
+                  ),
                 // if (screenSizeClass != ScreenSizeClass.smallScreen)
                 //   TextButton(
                 //     style: ButtonStyle(
@@ -114,7 +121,7 @@ class AppBarTemplate extends StatelessWidget implements PreferredSizeWidget {
                     ),
                     //onPressed: routeToAboutUs,
                     onPressed: () {
-                      controller.scrollToIndex(2,
+                      controller.scrollToIndex(5,
                           preferPosition: AutoScrollPosition.begin);
                     },
                     child: Seo.text(
